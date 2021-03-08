@@ -1,9 +1,9 @@
 import logging, sys
 
 
-def setup_logger():
+def setup_logger(log_level):
   logger = logging.getLogger()
-  logger.setLevel(logging.DEBUG)
+  logger.setLevel(log_level)
 
   sh = logging.StreamHandler(sys.stdout)
   formatter = logging.Formatter(
@@ -15,5 +15,5 @@ def setup_logger():
   return logger
 
 if __name__ == '__main__':
-  logger = setup_logger()
+  logger = setup_logger(logging.DEBUG)
   logger.info('test log')
