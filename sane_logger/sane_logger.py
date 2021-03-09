@@ -1,7 +1,7 @@
 import logging, sys
 
 
-def setup_logger(log_level=logging.INFO):
+def sane_logger(log_level=logging.INFO):
   logger = logging.getLogger()
   logger.setLevel(log_level)
 
@@ -15,5 +15,5 @@ def setup_logger(log_level=logging.INFO):
   return logger
 
 if __name__ == '__main__':
-  logger = setup_logger(logging.DEBUG)
+  logger = sane_logger(logging.DEBUG)
   logger.info('test log')
