@@ -3,6 +3,11 @@ import logging, sys
 
 def sane_logger(log_level=logging.INFO):
   logger = logging.getLogger()
+
+  if hasattr(logger, 'sane_logger_called'):
+    return logger
+  logger.sane_logger_called = True
+
   logger.setLevel(log_level)
 
   sh = logging.StreamHandler(sys.stdout)
